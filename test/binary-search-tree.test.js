@@ -1,6 +1,6 @@
-import { expect, assert } from 'chai';
-import { testOptional } from '../extensions/index.js';
-import BinarySearchTree from '../src/binary-search-tree.js';
+const { expect, assert } = require('chai');
+const { testOptional } = require('../extensions/index.js');
+const BinarySearchTree = require('../src/binary-search-tree.js');
 
 it.optional = testOptional;
 

@@ -1,6 +1,6 @@
-import { assert } from 'chai';
-import { testOptional, ListNode } from '../extensions/index.js';
-import removeKFromList from '../src/st-remove-from-list.js';
+const { assert } = require('chai');
+const { testOptional, ListNode } = require('../extensions/index.js');
+const removeKFromList = require('../src/st-remove-from-list.js');
 
 it.optional = testOptional;
 

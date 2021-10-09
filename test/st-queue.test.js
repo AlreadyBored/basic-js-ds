@@ -1,6 +1,6 @@
-import { assert } from 'chai';
-import { testOptional } from '../extensions/index.js';
-import Queue from '../src/st-queue.js';
+const { assert } = require('chai');
+const { testOptional } = require('../extensions/index.js');
+const Queue = require('../src/st-queue.js');
 
 it.optional = testOptional;
 

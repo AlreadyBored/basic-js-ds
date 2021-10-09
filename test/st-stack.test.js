@@ -1,6 +1,6 @@
-import { assert } from 'chai';
-import { testOptional } from '../extensions/index.js';
-import Stack from '../src/st-stack.js';
+const { assert } = require('chai');
+const { testOptional } = require('../extensions/index.js');
+const Stack = require('../src/st-stack.js');
 
 it.optional = testOptional;
 
