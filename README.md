@@ -55,7 +55,7 @@ Write your code in `src/binary-search-tree.js`.
 ---
 
 
-### **(ST) Remove from list**
+### **Remove from list**
 Given a **singly linked list** of integers `l` and an integer `k`, remove all elements from list `l` that have a value equal to `k`.
 
 For example, for `l` = `[3, 1, 2, 3, 4, 5]` and `k` = `3`,
@@ -64,17 +64,19 @@ the output should be `[1, 2, 4, 5]`
 **Singly linked lists** are already defined with this interface
 
 ```js
-function ListNode(x) {
-  this.value = x;
-  this.next = null;
+class ListNode {
+  constructor(x) {
+    this.value = x;
+    this.next = null;
+  }
 }
 ```
 
-Write your code in `src/st-remove-from-list.js`.
+Write your code in `src/remove-from-list.js`.
 
 ---
 
-### **(ST) Stack**
+### **Stack**
 Implement the **Stack** with a given interface via **array**.
 
 For example:
@@ -88,11 +90,11 @@ stack.pop(); // returns the top element from stack and deletes it, returns 1
 stack.pop(); // undefined
 ```
 
-Write your code in `src/st-stack.js`.
+Write your code in `src/stack.js`.
 
 ---
 
-### **(ST) Queue**
+### **Queue**
 Implement the **Queue** with a given interface via **linked list** (use `ListNode` extension).
 Each instance of queue must have 3 methods:
     * `enqueue(value)` — puts the `value` at the end of the **queue** 
@@ -111,7 +113,7 @@ queue.getUnderlyingList() // returns { value: 3, next: null }
 
 ```
 
-Write your code in `src/st-queue.js`.
+Write your code in `src/queue.js`.
 
 ---
 
@@ -141,6 +143,12 @@ Write your code in `src/st-queue.js`.
 ---
 
 © [AlreadyBored](https://github.com/alreadybored)  
-& tasks with prefix `st-` are integrated from [Short track 2021 repo](https://github.com/rkhaslarov/rs-school-short-track-2021)
+
+& tasks:
+* Remove from list
+* Stack
+* Queue
+
+are integrated from [Short track 2021 repo](https://github.com/rkhaslarov/rs-school-short-track-2021)
 
 & Thanks [mikhama](https://github.com/mikhama) for assistance!

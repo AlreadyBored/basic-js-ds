@@ -56,7 +56,7 @@
 
 ---
 
-### **(ST) Удалить из списка**
+### **Удалить из списка**
 Дан **односвязный связный список** целых чисел (`l`) и целое число (`k`), удалите все элементы из списка `l`, содержащие значение `k`.
 
 Например, для `l` = `[3, 1, 2, 3, 4, 5]` и `k` = `3`,
@@ -65,17 +65,19 @@
 Узлы односвязного связного списка определяются интерфейсом: 
 
 ```js
-function ListNode(x) {
-  this.value = x;
-  this.next = null;
+class ListNode {
+  constructor(x) {
+    this.value = x;
+    this.next = null;
+  }
 }
 ```
 
-Напишите свой код в `src/st-remove-from-list.js`.
+Напишите свой код в `src/remove-from-list.js`.
 
 ---
 
-### **(ST) Стек**
+### **Стек**
 Реализуйте **стек** с заданным интерфейсом на основе **массива**.
 
 Например:
@@ -89,11 +91,11 @@ stack.pop(); // возвращает верхний элемент и удаля
 stack.pop(); // undefined
 ```
 
-Напишите свой код в `src/st-stack.js`.
+Напишите свой код в `src/stack.js`.
 
 ---
 
-### **(ST) Очередь**
+### **Очередь**
 Реализуйте **очередь** с заданным интерфейсом на основе **связного списка** (используйте `ListNode`, расположенный в папке `extensions`).
 Каждый экземпляр очереди должен иметь 3 метода:
     * `enqueue(value)` — помещает `value` в конец **очереди** 
@@ -111,7 +113,7 @@ queue.dequeue(); // возвращает элемент из начала оче
 queue.getUnderlyingList() // возвращает { value: 3, next: null }
 ```
 
-Напишите свой код в `src/st-queue.js`.
+Напишите свой код в `src/queue.js`.
 
 ---
 
@@ -141,6 +143,12 @@ queue.getUnderlyingList() // возвращает { value: 3, next: null }
 ---
 
 © [AlreadyBored](https://github.com/alreadybored)  
-& задачи с префиксом `st-` интегрированы из [Short track 2021 repo](https://github.com/rkhaslarov/rs-school-short-track-2021)
 
-& Thanks [mikhama](https://github.com/mikhama) for assistance!
+& задачи
+* Удалить из списка
+* Стек
+* Очередь
+
+интегрированы из [Short track 2021 repo](https://github.com/rkhaslarov/rs-school-short-track-2021)
+
+& Спасибо [mikhama](https://github.com/mikhama) за помощь!

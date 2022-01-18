@@ -1,6 +1,6 @@
 const { expect, assert } = require('chai');
 const { testOptional } = require('../extensions/index.js');
-const BinarySearchTree = require('../src/binary-search-tree.js');
+const { BinarySearchTree } = require('../src/binary-search-tree.js');
 
 it.optional = testOptional;
 

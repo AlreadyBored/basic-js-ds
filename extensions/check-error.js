@@ -1,8 +1,8 @@
 const { CONSTANTS } = require('./constants.js');
 
-const { SPECIAL_PROP_VALUE, CORRECT_RESULT_MSG } = CONSTANTS;
+const { SPECIAL_PROP_VALUE, CORRECT_RESULT_MSG, INCORRECT_RESULT_MSG } = CONSTANTS;
 
-module.exports.checkForThrowingErrors = function (testsFuncs, expectedErrMsg) {
+const checkForThrowingErrors = function (testsFuncs, expectedErrMsg) {
     return testsFuncs.map(f => {
         try {
             f();
@@ -16,7 +16,7 @@ module.exports.checkForThrowingErrors = function (testsFuncs, expectedErrMsg) {
     });
 };
 
-module.exports.checkForNotThrowingErrors = function (testFuncs) {
+const checkForNotThrowingErrors = function (testFuncs) {
     return testFuncs.map(f => {
         try {
             f();
@@ -24,8 +24,13 @@ module.exports.checkForNotThrowingErrors = function (testFuncs) {
             if (err._specialProp === SPECIAL_PROP_VALUE) {
                 this.skip();
             } else {
-                return
+                return INCORRECT_RESULT_MSG;
             }
         }
     });
+};
+
+module.exports = {
+    checkForThrowingErrors,
+    checkForNotThrowingErrors
 };
