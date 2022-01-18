@@ -64,9 +64,11 @@ the output should be `[1, 2, 4, 5]`
 **Singly linked lists** are already defined with this interface
 
 ```js
-function ListNode(x) {
-  this.value = x;
-  this.next = null;
+class ListNode {
+  constructor(x) {
+    this.value = x;
+    this.next = null;
+  }
 }
 ```
 

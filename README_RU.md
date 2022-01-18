@@ -65,9 +65,11 @@
 Узлы односвязного связного списка определяются интерфейсом: 
 
 ```js
-function ListNode(x) {
-  this.value = x;
-  this.next = null;
+class ListNode {
+  constructor(x) {
+    this.value = x;
+    this.next = null;
+  }
 }
 ```
 
