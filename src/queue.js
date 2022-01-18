@@ -13,7 +13,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  * queue.dequeue(); // returns the top element from queue and deletes it, returns 1
  * queue.getUnderlyingList() // returns { value: 3, next: null }
  */
-module.exports = class Queue {
+class Queue {
 
   getUnderlyingList() {
     throw new NotImplementedError('Not implemented');
@@ -29,5 +29,8 @@ module.exports = class Queue {
     throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
   }
-
 }
+
+module.exports = {
+  Queue
+};
