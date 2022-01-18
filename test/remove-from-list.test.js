@@ -1,6 +1,6 @@
 const { assert } = require('chai');
 const { testOptional, ListNode } = require('../extensions/index.js');
-const removeKFromList = require('../src/st-remove-from-list.js');
+const { removeKFromList } = require('../src/remove-from-list.js');
 
 it.optional = testOptional;
 
@@ -18,7 +18,7 @@ function convertArrayToList(arr) {
   }, null);
 }
 
-describe('st-remove-from-list', () => {
+describe('Remove from list', () => {
   it.optional('should return the list without values equal to k', () => {
     const initial = convertArrayToList([3, 1, 2, 3, 4, 5]);
     const expected = convertArrayToList([1, 2, 4, 5]);

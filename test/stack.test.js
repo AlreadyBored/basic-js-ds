@@ -1,12 +1,12 @@
 const { assert } = require('chai');
 const { testOptional } = require('../extensions/index.js');
-const Stack = require('../src/st-stack.js');
+const { Stack } = require('../src/stack.js');
 
 it.optional = testOptional;
 
 Object.freeze(assert);
 
-describe('st-stack', () => {
+describe('Stack', () => {
   it.optional('should create a Stack with the methods', () => {
     const stack = new Stack();
     stack.push(5);
