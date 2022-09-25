@@ -2,8 +2,6 @@
 
 ⚠️ DO NOT SUBMIT PULL REQUESTS TO THIS REPO ⚠️
 
----
-
 #### Prerequisites
 1. Install [Node.js](https://nodejs.org/en/download/)   
 2. Fork this repository: https://github.com/AlreadyBored/basic-js-ds
@@ -12,6 +10,11 @@
 5. To install all dependencies use [`npm install`](https://docs.npmjs.com/cli/install)  
 6. Run `npm run test` in command line.
 7. You will see the number of pending, passing and failing tests. 100% of passing tests is equal to max score for the task
+
+---
+
+#### Troubleshooting
+- If you catch error like [this](https://user-images.githubusercontent.com/17920285/158375305-f54d87fa-6f42-402f-af25-10b233d98cf9.png) you can try to make `npm install -g node-gyp`
 
 ---
 
@@ -24,7 +27,7 @@
 ---
 
 #### Notes
-1. We recommend you to use Node.js of version 14.x.x LTS. If you use any of features, that does not supported by Node.js v14, there may be problems with task submit.
+1. We recommend you to use Node.js of version 16.x.x LTS. If you use any of features, that does not supported by Node.js v16, there may be problems with task submit.
 2. Please, be sure that each of your tests is limited to 30 sec.
 
 ---
