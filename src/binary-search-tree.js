@@ -70,7 +70,16 @@ class BinarySearchTree {
                 return link
             } else {
                 if (link.right || link.left) {
-                    return recursiveFind(link.left) || recursiveFind(link.right)
+                    let resultLeft = recursiveFind(link.left)
+                    let resultRight = recursiveFind(link.right)
+                    if (resultLeft) {
+                        return resultLeft
+                    }
+                    else if (resultRight) {
+                        return resultRight
+                    } else {
+                        return null
+                    }
                 } else {
                     return null
                 }
@@ -78,19 +87,14 @@ class BinarySearchTree {
         }
     }
     if (this.rootOtTree) {
-        if (this.rootOtTree.data == data) {
-            return this.rootOtTree
-        } else {
-            return recursiveFind(this.rootOtTree.left) || recursiveFind(this.rootOtTree.right)
-        }
+        return recursiveFind(this.rootOtTree)
     } else {
         return null
     }
   }
 
   remove(/* data */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+
   }
 
   min() {
