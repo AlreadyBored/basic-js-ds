@@ -38,18 +38,54 @@ class BinarySearchTree {
             previos.right = new Node(data);
         }
     } else {
-        this.rootOtTree = new Node(data)
+        this.rootOtTree = new Node(data);
     }
   }
 
-  has(/* data */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  has(data) {
+    let recursiveFind = function (link) {
+        if (link) {
+            if (link.data === data) {
+                return true
+            } else {
+                if (link.right || link.left) {
+                    return Boolean(recursiveFind(link.left) || recursiveFind(link.right))
+                } else {
+                    return false
+                }
+            }
+        }
+    }
+    if (this.rootOtTree) {
+        return Boolean(recursiveFind(this.rootOtTree.left) || recursiveFind(this.rootOtTree.right))
+    } else {
+        return false
+    }
   }
 
-  find(/* data */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  find(data) {
+    let recursiveFind = function (link) {
+        if (link) {
+            if (link.data === data) {
+                return link
+            } else {
+                if (link.right || link.left) {
+                    return recursiveFind(link.left) || recursiveFind(link.right)
+                } else {
+                    return null
+                }
+            }
+        }
+    }
+    if (this.rootOtTree) {
+        if (this.rootOtTree.data == data) {
+            return this.rootOtTree
+        } else {
+            return recursiveFind(this.rootOtTree.left) || recursiveFind(this.rootOtTree.right)
+        }
+    } else {
+        return null
+    }
   }
 
   remove(/* data */) {
@@ -58,13 +94,41 @@ class BinarySearchTree {
   }
 
   min() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    if (this.rootOtTree) {
+        if (this.rootOtTree.left) {
+            let current = this.rootOtTree.left;
+            while (current) {
+                if (current.left) {
+                    current = current.left;
+                } else {
+                    return current.data;
+                }
+            }
+        } else {
+            return this.rootOtTree.data
+        }
+    } else {
+        return null
+    }
   }
 
   max() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    if (this.rootOtTree) {
+        if (this.rootOtTree.right) {
+            let current = this.rootOtTree.right;
+            while (current) {
+                if (current.right) {
+                    current = current.right;
+                } else {
+                    return current.data;
+                }
+            }
+        } else {
+            return this.rootOtTree.data
+        }
+    } else {
+        return null
+    }
   }
 }
 
