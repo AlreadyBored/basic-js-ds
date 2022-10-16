@@ -150,6 +150,7 @@ Write your code in `src/queue.js`.
 © [AlreadyBored](https://github.com/alreadybored)  
 
 & tasks:
+* Binary search tree
 * Remove from list
 * Stack
 * Queue
