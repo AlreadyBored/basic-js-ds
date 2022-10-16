@@ -17,7 +17,6 @@ class BinarySearchTree {
      } else {
          return null;
      }
-
   }
 
   add(data) {
@@ -93,8 +92,53 @@ class BinarySearchTree {
     }
   }
 
-  remove(/* data */) {
-
+  remove(data) {
+    if (this.rootOtTree) {
+        let previos = this.rootOtTree;
+        let current = this.rootOtTree;
+        while (current) {
+            if (current.data === data) {
+                // если у узла нет потомков
+                if (current.left === null && current.right === null) {
+                   if (previos.left === current) {
+                       previos.left = null;
+                   } else {
+                       previos.right = null
+                    }
+                   return "OK"
+                }
+                // если есть 1 потомок - левый или правый
+                else if (current.left === null || current.right === null) {
+                    if (current.left === null) {
+                        if (previos.left === current) {
+                            previos.left = current.right
+                        } else {
+                             previos.right = current.right
+                        }
+                    } else {
+                        if (previos.left === current) {
+                            previos.left = current.left
+                        } else {
+                             previos.right = current.left
+                        }
+                    }
+                    return "OK"
+                }
+                else {
+                    return "Other"
+                }
+            }
+            else if (current.data > data) {
+                previos = current;
+                current = current.left;
+            } else {
+                previos = current;
+                current = current.right;
+            }
+        }
+    } else {
+        return 'Tree is empty'
+    }
   }
 
   min() {
