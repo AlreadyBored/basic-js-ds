@@ -179,7 +179,7 @@ class BinarySearchTree {
   remove(data) {
     let current = this.rootOtTree
     let previos = this.rootOtTree
-    if (this.has(data)) {
+    // if (this.has(data)) {
         if (this.rootOtTree) {
             // удаление корня
             if (this.rootOtTree.data === data) {
@@ -233,30 +233,70 @@ class BinarySearchTree {
                             return this
                         } // если есть оба потомка
                         else {
-                            let elementForReplace = current.right;
-                            let elementForReplacePrevios = current
-                            while (elementForReplace.left) {
-                                elementForReplacePrevios = elementForReplace
-                                elementForReplace = elementForReplace.left
-                            }
-                            if (elementForReplace.right === null) {
-                                if (previos.data < data) {
-                                    previos.right = elementForReplace;
-                                    if (elementForReplace !== current.right) {
-                                        elementForReplace.right = current.right
-                                    }
-                                    elementForReplace.left = current.left
-                                } else {
-                                    previos.left = elementForReplace;
-                                    elementForReplace.right = current.right
-                                    elementForReplace.left = current.left
+                            if (current.right.left) {
+                                let tempElementprevios = current.right
+                                let temElement = tempElementprevios.left
+                                while (temElement.left) {
+                                    temElement = temElement.left
                                 }
-                            } else {
-                                elementForReplacePrevios.left = elementForReplace.right
-                                previos.right = elementForReplace;
-                                elementForReplace.right = current.right
-                                elementForReplace.left = current.left
+                                if (temElement.data > previos.data) {
+                                    if (temElement.right === null) {
+                                        previos.right = temElement
+                                        temElement.right = current.right
+                                        temElement.left = current.left
+                                        tempElementprevios.left = null
+                                    }
+                                } else {
+                                    if (current.right !== null) {
+                                        previos.left = temElement
+                                        temElement.right = current.right
+                                        temElement.left = current.left
+                                        tempElementprevios.left = null
+                                    }
                             }
+                            return this
+                                // let elementForReplace = current.right;
+                                // let elementForReplacePrevios = current
+                                // while (elementForReplace.left) {
+                                //     elementForReplacePrevios = elementForReplace
+                                //     elementForReplace = elementForReplace.left
+                                // }
+                                // if (elementForReplace.right) {
+                                //     return this
+                                // } else {
+                                //     previos.right = elementForReplace
+                                //     elementForReplace.left = current.left
+                                //     elementForReplace.right = current.right;
+                                // }
+                            } else {
+                                if (previos.data > current.data) {
+                                    previos.left = current.right;
+                                    previos.left.left = current.left
+                                } else {
+                                    previos.right = current.right;
+                                    previos.right.left = current.left
+                                }
+                            }
+
+
+                            // if (elementForReplace.right === null) {
+                            //     if (previos.data < data) {
+                            //         previos.right = elementForReplace;
+                            //         if (elementForReplace !== current.right) {
+                            //             elementForReplace.right = current.right
+                            //         }
+                            //         elementForReplace.left = current.left
+                            //     } else {
+                            //         previos.left = elementForReplace;
+                            //         elementForReplace.right = current.right
+                            //         elementForReplace.left = current.left
+                            //     }
+                            // } else {
+                            //     elementForReplacePrevios.left = elementForReplace.right
+                            //     previos.right = elementForReplace;
+                            //     elementForReplace.right = current.right
+                            //     elementForReplace.left = current.left
+                            // }
                             return this
                         }
                     }
@@ -270,9 +310,6 @@ class BinarySearchTree {
                 }
                 return this // ничего не нашлось
             }
-        } else {
-            return this
-        }
     } else {
         return this
     }
