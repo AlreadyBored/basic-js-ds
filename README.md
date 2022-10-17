@@ -128,7 +128,7 @@ Write your code in `src/stack.js`.
 Implement the **Queue** with a given interface via **linked list** (use `ListNode` extension).
 Each instance of queue must have 3 methods:
     * `enqueue(value)` — puts the `value` at the end of the **queue** 
-    * `deque` — retrieves a value from the head of the **queue** and deletes it
+    * `dequeue` — retrieves a value from the head of the **queue** and deletes it
     * `getUnderlyingList` - returns underlying **linked list**
 
 For example:
