@@ -42,6 +42,9 @@ class BinarySearchTree {
   }
 
   has(data) {
+    if (data === this.rootOtTree.data) {
+        return true
+    }
     let recursiveFind = function (link) {
         if (link) {
             if (link.data === data) {
@@ -92,54 +95,152 @@ class BinarySearchTree {
     }
   }
 
+  // remove(data) {
+  //   if (this.rootOtTree) {
+  //       let previos = this.rootOtTree;
+  //       let current = this.rootOtTree;
+  //       while (current) {
+  //           if (current.data === data) {
+  //               // если у узла нет потомков
+  //               if (current.left === null && current.right === null) {
+  //                  if (previos.left === current) {
+  //                      previos.left = null;
+  //                  } else {
+  //                      previos.right = null
+  //                   }
+  //                  return "OK"
+  //               }
+  //               // если есть 1 потомок - левый или правый
+  //               else if (current.left === null || current.right === null) {
+  //                   if (current.left === null) {
+  //                       if (previos.left === current) {
+  //                           previos.left = current.right
+  //                       } else {
+  //                            previos.right = current.right
+  //                       }
+  //                   } else {
+  //                       if (previos.left === current) {
+  //                           previos.left = current.left
+  //                       } else {
+  //                            previos.right = current.left
+  //                       }
+  //                   }
+  //                   return "OK"
+  //               }
+  //               else {
+  //                   return "Other"
+  //               }
+  //           }
+  //           else if (current.data > data) {
+  //               previos = current;
+  //               current = current.left;
+  //           } else {
+  //               previos = current;
+  //               current = current.right;
+  //           }
+  //       }
+  //   } else {
+  //       return 'Tree is empty'
+  //   }
+  // }
   remove(data) {
+    let current = this.rootOtTree
+    let previos = this.rootOtTree
     if (this.rootOtTree) {
-        let previos = this.rootOtTree;
-        let current = this.rootOtTree;
-        while (current) {
-            if (current.data === data) {
-                // если у узла нет потомков
-                if (current.left === null && current.right === null) {
-                   if (previos.left === current) {
-                       previos.left = null;
-                   } else {
-                       previos.right = null
-                    }
-                   return "OK"
-                }
-                // если есть 1 потомок - левый или правый
-                else if (current.left === null || current.right === null) {
-                    if (current.left === null) {
-                        if (previos.left === current) {
-                            previos.left = current.right
-                        } else {
-                             previos.right = current.right
-                        }
-                    } else {
-                        if (previos.left === current) {
-                            previos.left = current.left
-                        } else {
-                             previos.right = current.left
-                        }
-                    }
-                    return "OK"
-                }
-                else {
-                    return "Other"
-                }
-            }
-            else if (current.data > data) {
+        // удаление корня
+        if (this.rootOtTree.data === data) {
+            current = current.right;
+            while (current.left) {
                 previos = current;
                 current = current.left;
-            } else {
-                previos = current;
-                current = current.right;
+            }
+            //если у самого левого элемента есть поддерево
+            if (current.right) {
+                previos.left = current.right;
+                current.left = this.rootOtTree.left
+                current.right = this.rootOtTree.right
+                this.rootOtTree = current
+            } //у самого левого элемента правого поддерева нет потомков
+            else {
+                previos.left = null;
+                current.left = this.rootOtTree.left
+                current.right = this.rootOtTree.right
+                this.rootOtTree = current;
             }
         }
+        // не корень
+        else {
+            while (current) {
+                if (current.data === data) {
+                    // нет потомков
+                    if (current.left === null && current.right === null) {
+                        if (current.data > previos.data) {
+                            previos.right = null
+                        } else {
+                            previos.left = null
+                        }
+                        return this
+                    }
+                    // один потомок
+                    else if (current.left === null || current.right === null) {
+                        if (current.data > previos.data) {
+                            if (current.left === null) {
+                                previos.right = current.right
+                            } else {
+                                previos.right = current.left
+                            }
+                        } else {
+                            if (current.left === null) {
+                                previos.left = current.right
+                            } else {
+                                previos.left = current.left
+                            }
+                        }
+                        return this
+                    } // если есть оба потомка
+                    else {
+                        let elementForReplace = current.right;
+                        let elementForReplacePrevios = current
+                        while (elementForReplace.left) {
+                            elementForReplacePrevios = elementForReplace
+                            elementForReplace = elementForReplace.left
+                        }
+                        if (elementForReplace.right === null) {
+                            if (previos.data < data) {
+                                previos.right = elementForReplace;
+                                if (elementForReplace !== current.right) {
+                                    elementForReplace.right = current.right
+                                }
+                                elementForReplace.left = current.left
+                            } else {
+                                previos.left = elementForReplace;
+                                elementForReplace.right = current.right
+                                elementForReplace.left = current.left
+                            }
+                        } else {
+                            elementForReplacePrevios.left = elementForReplace.right
+                            previos.right = elementForReplace;
+                            elementForReplace.right = current.right
+                            elementForReplace.left = current.left
+                        }
+                        return this
+                    }
+                }
+                else if (current.data > data) {
+                    previos = current
+                    current = current.left
+                } else {
+                    previos = current
+                    current = current.right
+                }
+            }
+            return this // ничего не нашлось
+        }
     } else {
-        return 'Tree is empty'
+        return this
     }
   }
+
 
   min() {
     if (this.rootOtTree) {
