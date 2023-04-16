@@ -17,9 +17,7 @@ class Stack {
     this.stack = []
   }
   push = (element) => this.stack.push(element)
-
   pop = () => this.stack.pop()
-
   peek = () => this.stack[this.stack.length - 1]
 }
 

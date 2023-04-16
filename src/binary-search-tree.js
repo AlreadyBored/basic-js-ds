@@ -149,7 +149,6 @@ class BinarySearchTree {
     while (node.right) {
       node = node.right
     }
-
     return node.data
   }
 }

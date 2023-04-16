@@ -38,7 +38,6 @@ function removeKFromList(l, k) {
       curr = curr.next
     }
   }
-
   return l
 }
 
