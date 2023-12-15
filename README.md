@@ -3,22 +3,25 @@
 ⚠️ DO NOT SUBMIT PULL REQUESTS TO THIS REPO ⚠️
 
 #### Prerequisites
-1. Install [Node.js](https://nodejs.org/en/download/)   
+
+1. Install [Node.js](https://nodejs.org/en/download/)
 2. Fork this repository: https://github.com/AlreadyBored/basic-js-ds
-3. Clone your newly created repo: https://github.com/<%your_github_username%>/basic-js-ds  
-4. Go to folder `basic-js-ds`  
-5. To install all dependencies use [`npm install`](https://docs.npmjs.com/cli/install)  
+3. Clone your newly created repo: https://github.com/<%your_github_username%>/basic-js-ds
+4. Go to folder `basic-js-ds`
+5. To install all dependencies use [`npm install`](https://docs.npmjs.com/cli/install)
 6. Run `npm run test` in command line.
 7. You will see the number of pending, passing and failing tests. 100% of passing tests is equal to max score for the task
 
 ---
 
 #### Troubleshooting
+
 - If you catch error like [this](https://user-images.githubusercontent.com/17920285/158375305-f54d87fa-6f42-402f-af25-10b233d98cf9.png) you can try to make `npm install -g node-gyp`
 
 ---
 
 #### Submit to [rs app](https://app.rs.school)
+
 1. Open [rs app](https://app.rs.school) and login
 2. Go to submit task page
 3. Select your task (BasicJS Data Structures)
@@ -27,12 +30,14 @@
 ---
 
 #### Notes
+
 1. We recommend you to use Node.js of version 16.x.x LTS. If you use any of features, that does not supported by Node.js v16, there may be problems with task submit.
 2. Please, be sure that each of your tests is limited to 30 sec.
 
 ---
 
 ## General task description
+
 Your task is to deal with some data structures to solve the subtasks. Subtasks descriptions, as well as instructions on how to run tests and submit solutions are below.
 
 ---
@@ -46,13 +51,14 @@ A **binary search tree** is a **binary tree** with additional properties: the va
 
 Your task is to implement the class `BinarySearchTree`.
 Each instance of `BinarySearchTree` must have following methods:
-  * `root` — return **root node** of the tree
-  * `add(data)` — add **node** with `data` to the tree
-  * `has(data)` — returns `true` if **node** with the `data` exists in the tree and `false` otherwise
-  * `find(data)` — returns **node** with the `data` if **node** with the `data` exists in the tree and `null` otherwise
-  * `remove(data)` — removes **node** with the `data` from the tree if **node** with the `data` exists
-  * `min` — returns **minimal** **value** stored in the tree (or `null` if tree has no **nodes**)
-  * `max` — returns **maximal** **value** stored in the tree (or `null` if tree has no **nodes**)
+
+- `root` — return **root node** of the tree
+- `add(data)` — add **node** with `data` to the tree
+- `has(data)` — returns `true` if **node** with the `data` exists in the tree and `false` otherwise
+- `find(data)` — returns **node** with the `data` if **node** with the `data` exists in the tree and `null` otherwise
+- `remove(data)` — removes **node** with the `data` from the tree if **node** with the `data` exists
+- `min` — returns **minimal** **value** stored in the tree (or `null` if tree has no **nodes**)
+- `max` — returns **maximal** **value** stored in the tree (or `null` if tree has no **nodes**)
 
 For example:
 
@@ -84,8 +90,8 @@ Write your code in `src/binary-search-tree.js`.
 
 ---
 
-
 ### **Remove from list**
+
 Given a **singly linked list** of integers `l` and an integer `k`, remove all elements from list `l` that have a value equal to `k`.
 
 For example, for `l` = `[3, 1, 2, 3, 4, 5]` and `k` = `3`,
@@ -107,6 +113,7 @@ Write your code in `src/remove-from-list.js`.
 ---
 
 ### **Stack**
+
 Implement the **Stack** with a given interface via **array**.
 
 For example:
@@ -125,11 +132,11 @@ Write your code in `src/stack.js`.
 ---
 
 ### **Queue**
+
 Implement the **Queue** with a given interface via **linked list** (use `ListNode` extension).
 Each instance of queue must have 3 methods:
-    * `enqueue(value)` — puts the `value` at the end of the **queue** 
-    * `dequeue` — retrieves a value from the head of the **queue** and deletes it
-    * `getUnderlyingList` - returns underlying **linked list**
+_ `enqueue(value)` — puts the `value` at the end of the **queue**
+_ `dequeue` — retrieves a value from the head of the **queue** and deletes it \* `getUnderlyingList` - returns underlying **linked list**
 
 For example:
 
@@ -139,20 +146,20 @@ const queue = new Queue();
 queue.enqueue(1); // adds the element to the queue
 queue.enqueue(3); // adds the element to the queue
 queue.dequeue(); // returns the top element from queue and deletes it, returns 1
-queue.getUnderlyingList() // returns { value: 3, next: null }
-
+queue.getUnderlyingList(); // returns { value: 3, next: null }
 ```
 
 Write your code in `src/queue.js`.
 
 ---
 
-© [AlreadyBored](https://github.com/alreadybored)  
+© [AlreadyBored](https://github.com/alreadybored)
 
 & tasks:
-* Remove from list
-* Stack
-* Queue
+
+- Remove from list
+- Stack
+- Queue
 
 are integrated from [Short track 2021 repo](https://github.com/rkhaslarov/rs-school-short-track-2021)
 
