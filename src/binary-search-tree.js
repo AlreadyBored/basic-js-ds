@@ -34,7 +34,21 @@ class BinarySearchTree {
   }
 
   has(data) {
+    return hasData(this.node, data)
+    function hasData(node, data) {
+      if (!node) {
+        return false
+      }
+      if (node.data === data) {
+        return true
+      }
+      if (node.data > data) {
 
+        return hasData(node.right, data)
+      } else {
+        return hasData(node.left, data)
+      }
+    }
   }
 
   find(/* data */) {
