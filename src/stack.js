@@ -47,7 +47,7 @@ class Stack {
     this.items = [];
   }
 }
-
+// Small fix
 module.exports = {
   Stack,
 };
