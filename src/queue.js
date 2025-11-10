@@ -1,5 +1,5 @@
-const {ListNode} = require("../extensions");
-const {NotImplementedError} = require('../extensions/index.js');
+const {ListNode} = require("../extensions/list-node.js");
+const {NotImplementedError} = require('../lib/errors');
 
 // const { ListNode } = require('../extensions/list-node.js');
 
