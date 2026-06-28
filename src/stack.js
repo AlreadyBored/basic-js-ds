@@ -1,4 +1,4 @@
-const { NotImplementedError } = require('../lib/errors');
+const { NotImplementedError } = require('../lib');
 
 /**
  * Implement the Stack with a given interface via array.

@@ -14,12 +14,6 @@
 
 ---
 
-#### Troubleshooting
-
-- If you catch error like [this](https://user-images.githubusercontent.com/17920285/158375305-f54d87fa-6f42-402f-af25-10b233d98cf9.png) you can try to make `npm install -g node-gyp`
-
----
-
 #### Submit to [rs app](https://app.rs.school)
 
 1. Open [rs app](https://app.rs.school) and login
@@ -31,7 +25,7 @@
 
 #### Notes
 
-1. We recommend you to use Node.js of version 16.x.x LTS. If you use any of features, that does not supported by Node.js v16, there may be problems with task submit.
+1. We recommend you to use Node.js of version 22.x.x LTS (the minimum required version, see `engines` in `package.json`). If you use any features that are not supported by Node.js v22, there may be problems with task submit.
 2. Please, be sure that each of your tests is limited to 30 sec.
 
 ---
