@@ -1,4 +1,4 @@
-const { NotImplementedError } = require('../lib/errors');
+const { NotImplementedError } = require('../lib');
 // const { Node } = require('../extensions/list-tree.js');
 
 /**

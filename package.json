@@ -2,7 +2,6 @@
   "name": "basic-js-ds",
   "version": "1.0.0",
   "description": "Tasks for RSS",
-  "main": "index.js",
   "engines": {
     "node": ">=22",
     "npm": ">=10"
